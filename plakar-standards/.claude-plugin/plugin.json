@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "plakar-standards",
+  "displayName": "PlakarKorp Standards",
+  "version": "0.1.0",
+  "description": "PlakarKorp engineering conventions: session-injected rules, gofmt/vet/lint feedback on every write, guards on generated and vendored trees.",
+  "author": {
+    "name": "PlakarKorp",
+    "url": "https://github.com/PlakarKorp"
+  },
+  "repository": "https://github.com/PlakarKorp/claude-standards",
+  "license": "ISC",
+  "keywords": ["go", "conventions", "lint", "plakar"],
+  "hooks": "./hooks/hooks.json",
+  "userConfig": {
+    "strict_lint": {
+      "type": "boolean",
+      "title": "Report golangci-lint findings",
+      "description": "Run golangci-lint on edited files and report findings back to Claude. Turn off if your machine's linter is slow or noisy.",
+      "default": true
+    },
+    "inject_rules": {
+      "type": "boolean",
+      "title": "Inject conventions at session start",
+      "description": "Load the PlakarKorp rule set into context at the start of every session.",
+      "default": true
+    }
+  }
+}

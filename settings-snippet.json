@@ -1,0 +1,21 @@
+{
+  "_comment": "Copy this into .claude/settings.json at the root of each PlakarKorp repository, or merge it into the existing one. Claude Code registers the marketplace and enables the plugin when the developer trusts the folder.",
+  "extraKnownMarketplaces": {
+    "plakar": {
+      "source": {
+        "source": "github",
+        "repo": "PlakarKorp/claude-standards"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "plakar-standards@plakar": true
+  },
+  "permissions": {
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Read(./.env*)"
+    ]
+  }
+}

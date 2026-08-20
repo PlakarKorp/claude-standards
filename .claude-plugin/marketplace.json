@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "plakar",
+  "owner": {
+    "name": "PlakarKorp",
+    "url": "https://github.com/PlakarKorp"
+  },
+  "metadata": {
+    "description": "Internal Claude Code plugins for PlakarKorp repositories",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "plakar-standards",
+      "source": "./plakar-standards",
+      "description": "PlakarKorp engineering conventions: session-injected rules, gofmt/vet/lint feedback on every write, guards on generated and vendored trees."
+    }
+  ]
+}
