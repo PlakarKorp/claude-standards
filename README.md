@@ -43,7 +43,8 @@ claude-standards/
     │   ├── go-check.sh               # PostToolUse Write|Edit
     │   └── _lib.sh
     ├── agents/plakar-reviewer.md
-    └── commands/standards-check.md
+    ├── commands/standards-check.md
+    └── skills/                       # one directory per skill
 ```
 
 ## Installing
