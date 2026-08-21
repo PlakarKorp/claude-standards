@@ -15,6 +15,7 @@ config file.
 | Formatting | `PostToolUse` runs `gofmt -w` on every Go file written | Yes, silently |
 | `go vet` and `golangci-lint` findings | `PostToolUse` exits 2, findings go back to Claude | Yes, in-loop |
 | Generated, vendored and lock files | `PreToolUse` denies the write | Yes, hard |
+| Posting into GitHub conversations | `PreToolUse` denies the `gh` call | Yes, hard |
 | Pre-PR review | `plakar-reviewer` subagent | No — advisory |
 
 The split matters. Prose in `rules/` is context: Claude tries to follow it and
@@ -41,6 +42,7 @@ claude-standards/
     ├── scripts/
     │   ├── inject-rules.sh           # SessionStart
     │   ├── guard-paths.sh            # PreToolUse  Write|Edit
+    │   ├── guard-github.sh           # PreToolUse  Bash
     │   ├── go-check.sh               # PostToolUse Write|Edit
     │   └── _lib.sh
     ├── agents/plakar-reviewer.md
