@@ -34,6 +34,7 @@ claude-standards/
     ├── hooks/hooks.json
     ├── rules/                        # injected at session start
     │   ├── 00-core.md
+    │   ├── 05-process.md
     │   ├── 10-git.md
     │   ├── 20-go.md                  # only when the tree has a go.mod
     │   └── 30-typescript.md          # only when the tree has a package.json

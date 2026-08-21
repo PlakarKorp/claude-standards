@@ -1,10 +1,21 @@
-# Commits and branches
+# Commits, pull requests, reviews
 
 - One logical change per commit. If the message needs the word "and", split it.
+- Commits in an order that reads: each one coherent on its own, none relying on
+  a later fix.
 - Subject line: imperative, lowercase after the area prefix, no trailing period,
   under ~72 characters. `storage/s3: retry on 503 instead of failing the run`
-- The body explains why, and what you decided against. Skip the body only when
-  the subject is genuinely the whole story.
+- Body explains why, and what you decided against. A few lines is right; a
+  paragraph or two only for genuinely tricky work. Skip it when the subject is
+  the whole story.
+- A PR should not carry an excessive number of commits. A big topic is split
+  into stacked PRs, each reviewable on its own.
+- PR descriptions follow the same rules as commit bodies: concise, human
+  readable, no smileys, no exhaustive walkthrough.
+- Never comment on or reply to an issue, a PR comment, or a review on GitHub.
+  Work at the commit level and leave the conversation to people.
 - Never amend, rebase, or force-push a branch that someone else may have pulled
   without being asked to.
 - Do not commit or push unless asked. Leave the tree ready and say what you did.
+- After a PR is done, look over the affected code again and check the codebase is
+  saner than before it. Say so if it is not.

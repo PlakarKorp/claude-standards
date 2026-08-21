@@ -175,6 +175,11 @@ case "$out" in
 *) report no "inject-rules emits core rules" "got: $out" ;;
 esac
 
+case "$out" in
+*"Before you write code"*) report ok "inject-rules includes the process rules" ;;
+*) report no "inject-rules includes the process rules" "no process section" ;;
+esac
+
 out="$(cd "$tmp" && "$SCRIPTS/inject-rules.sh")"
 case "$out" in
 *"# Go"*) report no "inject-rules skips Go rules outside a module" "Go section leaked" ;;

@@ -11,7 +11,24 @@ otherwise repeat in review.
   wins locally — raise the inconsistency instead of fixing it in passing.
 - No new dependency without saying why in the commit message. We ship a backup
   tool; every dependency is something we carry forever.
-- Do not add comments that restate the code. Comment the reason, not the
-  mechanism.
 - Never leave commented-out code behind. Delete it; git remembers.
 - No TODO without a name or an issue number attached.
+
+## Prose
+
+Applies to comments, commit messages, PR descriptions, and documents.
+
+- Short sentences. Write for an engineer who knows the codebase.
+- No word salad, no padding, no restating the point in different words.
+- Do not over-explain. If one sentence carries it, stop at one.
+
+## Comments
+
+- Comment what is tricky, not what the code already says. A comment that
+  restates the mechanism is noise a reader has to check against the code.
+- Say why, briefly. The code says how.
+
+## Tests
+
+- Every change ships tests. The goal is coverage going up, not staying level.
+- A change you cannot test is a design problem — say so rather than skipping it.

@@ -28,6 +28,7 @@ emit() {
 
 # Always applicable.
 emit "$RULES/00-core.md"
+emit "$RULES/05-process.md"
 emit "$RULES/10-git.md"
 
 # Language-specific rules, only when the tree actually uses that language.
