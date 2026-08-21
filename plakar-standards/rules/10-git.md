@@ -3,6 +3,9 @@
 - One logical change per commit. If the message needs the word "and", split it.
 - Commits in an order that reads: each one coherent on its own, none relying on
   a later fix.
+- Branch names are `<username>/<slug>`, the slug saying what the change does.
+  `poolpOrg/org-scoped-credentials`, not `fix`, `wip` or `feat/thing`. When you
+  create the branch, use the developer's username, not your own.
 - Subject line: imperative, lowercase after the area prefix, no trailing period,
   under ~72 characters. `storage/s3: retry on 503 instead of failing the run`
 - Body explains why, and what you decided against. A few lines is right; a
