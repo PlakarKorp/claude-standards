@@ -21,5 +21,9 @@
 - Never amend, rebase, or force-push a branch that someone else may have pulled
   without being asked to.
 - Do not commit or push unless asked. Leave the tree ready and say what you did.
+- Ask before creating a branch and before opening a PR. Propose the name and the
+  description, wait for the answer.
+- Never merge. Not your own PR, not anyone else's, not with the merge button and
+  not from the command line. The developer merges.
 - After a PR is done, look over the affected code again and check the codebase is
   saner than before it. Say so if it is not.
