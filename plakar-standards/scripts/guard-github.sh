@@ -79,9 +79,9 @@ $verbs" in
 *"
 api"*)
 	case "$flat" in
-	*comments* | *reviews* | *review_comments*)
+	*comments* | *reviews*)
 		case "$flat" in
-		*-X?POST* | *-X?PATCH* | *-X?PUT* | *--method?POST* | *--method?PATCH* | *--method?PUT* | *-f* | *--field* | *--input*)
+		*-X?POST* | *-X?PATCH* | *-X?PUT* | *--method?POST* | *--method?PATCH* | *--method?PUT* | *-f* | *--input*)
 			deny "$conversation"
 			;;
 		esac
@@ -92,7 +92,7 @@ esac
 
 # The GraphQL API reaches the same conversations by another door.
 case "$flat" in
-*addComment* | *addPullRequestReview* | *addPullRequestReviewComment* | *addDiscussionComment*)
+*addComment* | *addPullRequestReview* | *addDiscussionComment*)
 	deny "$conversation"
 	;;
 esac
