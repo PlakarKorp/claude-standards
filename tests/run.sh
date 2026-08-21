@@ -74,6 +74,9 @@ gh api -X POST repos/o/r/issues/1/comments -f body=x
 gh api --method POST repos/o/r/pulls/1/reviews -f event=APPROVE
 gh api graphql -f query=addComment
 gh -R o/r pr comment 1 --body x
+gh pr merge 42
+gh pr merge 42 --squash
+gh api -X PUT repos/o/r/pulls/1/merge
 CASES
 
 # --- guard-github: leaves the rest alone ---------------------------------
@@ -91,7 +94,6 @@ gh pr view 42
 gh pr diff 42
 gh pr list
 gh pr checkout 42
-gh pr merge 42
 gh api repos/o/r/issues/1/comments
 git commit -m "storage/s3: retry on 503"
 ls ~/gh/pr-comments-backup
