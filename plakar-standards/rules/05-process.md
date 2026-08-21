@@ -13,18 +13,16 @@
 
 ## Documents
 
-Any work beyond a couple of small commits gets three documents, committed to
+Any work beyond a couple of small commits gets two documents, committed to
 `PlakarKorp/source-of-truth`:
 
 | Document | Directory |
 | --- | --- |
-| Agent description — exhaustive, enough for an agent to implement the task without asking | `engineering/agent-specifications/` |
-| Human specification — short, direct, readable start to finish | `engineering/specifications/` |
 | Master plan, in our usual structure | `engineering/plans/` |
+| Agent description — exhaustive, enough for an agent to implement the task without asking | `engineering/agent-specifications/` |
 
-All three share one name: `YYYY-MM-DD-<slug>.md`, dated the day it is written,
-with a slug that says what the work is. These directories are flat lists read at
-a glance, so a date alone is not a name. The same slug across the three makes
-the set obvious.
+Both share one name: `YYYY-MM-DD-<slug>.md`, dated the day it is written, with a
+slug that says what the work is. These directories are flat lists read at a
+glance, so a date alone is not a name.
 
 When a master plan is fully executed, update it to say so.
