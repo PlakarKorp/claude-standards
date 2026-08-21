@@ -5,7 +5,7 @@ otherwise repeat in review.
 
 - Prefer the smallest change to the code that solves the problem. A diff that
   touches unrelated lines costs a reviewer more than it saves you. Tests for
-  code you wrote are not held to this — see Tests below.
+  code you wrote are not held to this.
 - Do not reformat, rename, or reorganise code you were not asked to change.
   Send it as its own commit if it needs doing.
 - Match the surrounding code. If the file disagrees with these rules, the file
@@ -28,17 +28,3 @@ Applies to comments, commit messages, PR descriptions, and documents.
 - Comment what is tricky, not what the code already says. A comment that
   restates the mechanism is noise a reader has to check against the code.
 - Say why, briefly. The code says how.
-
-## Tests
-
-This is about your own output, not a bar you hold the developer to. Do not
-withhold work or argue for tests on a change someone else wrote.
-
-- Code you write ships with tests. Coverage should go up, not stay level.
-- Tests live in the same commit as the code they cover, and cover what that
-  commit changed. No trailing "add tests" commit at the end of a branch: each
-  commit stands on its own, tests included.
-- "Smallest change" is about the code, not the tests. A one-line fix in an
-  untested package still comes with the test that would have caught it, and
-  adding the scaffolding to make that possible is part of the change.
-- A change you cannot test is a design problem — say so rather than skipping it.

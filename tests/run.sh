@@ -227,6 +227,11 @@ case "$out" in
 *) report no "inject-rules includes the process rules" "no process section" ;;
 esac
 
+case "$out" in
+*"not a bar you hold the developer to"*) report ok "inject-rules includes the test rules" ;;
+*) report no "inject-rules includes the test rules" "no test section" ;;
+esac
+
 out="$(cd "$tmp" && "$SCRIPTS/inject-rules.sh")"
 case "$out" in
 *"# Go"*) report no "inject-rules skips Go rules outside a module" "Go section leaked" ;;

@@ -38,7 +38,8 @@ claude-standards/
     │   ├── 05-process.md
     │   ├── 10-git.md
     │   ├── 20-go.md                  # only when the tree has a go.mod
-    │   └── 30-typescript.md          # only when the tree has a package.json
+    │   ├── 30-typescript.md          # only when the tree has a package.json
+    │   └── 40-tests.md
     ├── scripts/
     │   ├── inject-rules.sh           # SessionStart
     │   ├── guard-paths.sh            # PreToolUse  Write|Edit

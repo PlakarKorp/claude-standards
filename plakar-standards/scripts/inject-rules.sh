@@ -30,6 +30,7 @@ emit() {
 emit "$RULES/00-core.md"
 emit "$RULES/05-process.md"
 emit "$RULES/10-git.md"
+emit "$RULES/40-tests.md"
 
 # Language-specific rules, only when the tree actually uses that language.
 # The session's cwd is where Claude was launched.
