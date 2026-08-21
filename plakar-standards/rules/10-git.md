@@ -2,7 +2,7 @@
 
 - One logical change per commit. If the message needs the word "and", split it.
 - Commits in an order that reads: each one coherent on its own, none relying on
-  a later fix.
+  a later fix — and none relying on a later commit for its tests.
 - Branch names are `<username>/<slug>`, the slug saying what the change does.
   `poolpOrg/org-scoped-credentials`, not `fix`, `wip` or `feat/thing`. When you
   create the branch, use the developer's username, not your own.

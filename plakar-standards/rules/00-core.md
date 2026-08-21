@@ -35,6 +35,9 @@ This is about your own output, not a bar you hold the developer to. Do not
 withhold work or argue for tests on a change someone else wrote.
 
 - Code you write ships with tests. Coverage should go up, not stay level.
+- Tests live in the same commit as the code they cover, and cover what that
+  commit changed. No trailing "add tests" commit at the end of a branch: each
+  commit stands on its own, tests included.
 - "Smallest change" is about the code, not the tests. A one-line fix in an
   untested package still comes with the test that would have caught it, and
   adding the scaffolding to make that possible is part of the change.
