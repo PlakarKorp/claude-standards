@@ -52,6 +52,53 @@ for p in "$tmp/snapshot/backup.go" "$tmp/cmd/plakar/main.go" "$tmp/README.md"; d
 	fi
 done
 
+# --- guard-github: denies posting into conversations ----------------------
+bash_payload() {
+	printf '{"hook_event_name":"PreToolUse","cwd":"%s","tool_name":"Bash","tool_input":{"command":"%s"}}' \
+		"$tmp" "$1"
+}
+
+while IFS= read -r c; do
+	[ -n "$c" ] || continue
+	out="$(bash_payload "$c" | "$SCRIPTS/guard-github.sh")"
+	case "$out" in
+	*'"deny"'*) report ok "guard-github denies: $c" ;;
+	*) report no "guard-github denies: $c" "got: $out" ;;
+	esac
+done <<'CASES'
+gh pr comment 42 --body hello
+gh pr review 42 --approve
+gh issue comment 7 --body hi
+git log && gh pr comment 42 --body x
+gh api -X POST repos/o/r/issues/1/comments -f body=x
+gh api --method POST repos/o/r/pulls/1/reviews -f event=APPROVE
+gh api graphql -f query=addComment
+gh -R o/r pr comment 1 --body x
+CASES
+
+# --- guard-github: leaves the rest alone ---------------------------------
+while IFS= read -r c; do
+	[ -n "$c" ] || continue
+	out="$(bash_payload "$c" | "$SCRIPTS/guard-github.sh")"
+	if [ -z "$out" ]; then
+		report ok "guard-github allows: $c"
+	else
+		report no "guard-github allows: $c" "got: $out"
+	fi
+done <<'CASES'
+gh pr create --title x --body y
+gh pr view 42
+gh pr diff 42
+gh pr list
+gh pr checkout 42
+gh pr merge 42
+gh api repos/o/r/issues/1/comments
+git commit -m "storage/s3: retry on 503"
+ls ~/gh/pr-comments-backup
+gh pr ready 42
+gh release create v1
+CASES
+
 # --- go-check: ignores non-Go --------------------------------------------
 echo "hello" >"$tmp/notes.md"
 if payload PostToolUse "$tmp/notes.md" | "$SCRIPTS/go-check.sh" 2>/dev/null; then

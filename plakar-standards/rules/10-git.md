@@ -13,7 +13,8 @@
 - PR descriptions follow the same rules as commit bodies: concise, human
   readable, no smileys, no exhaustive walkthrough.
 - Never comment on or reply to an issue, a PR comment, or a review on GitHub.
-  Work at the commit level and leave the conversation to people.
+  Work at the commit level and leave the conversation to people. A hook denies
+  this; opening a PR and reading threads stay allowed.
 - Never amend, rebase, or force-push a branch that someone else may have pulled
   without being asked to.
 - Do not commit or push unless asked. Leave the tree ready and say what you did.
