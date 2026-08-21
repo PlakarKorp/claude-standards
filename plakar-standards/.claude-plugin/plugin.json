@@ -11,7 +11,6 @@
   "repository": "https://github.com/PlakarKorp/claude-standards",
   "license": "ISC",
   "keywords": ["go", "conventions", "lint", "plakar"],
-  "hooks": "./hooks/hooks.json",
   "userConfig": {
     "strict_lint": {
       "type": "boolean",
