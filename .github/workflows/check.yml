@@ -15,13 +15,22 @@ jobs:
         with:
           go-version: stable
 
-      - uses: golangci/golangci-lint-action@v6
-        with:
-          install-mode: binary
-          args: --version
+      # The hook shells out to golangci-lint, so tests/run.sh needs the binary
+      # on PATH. Not golangci-lint-action: that one runs the linter over the
+      # repository, and there is no Go code here to lint.
+      - name: install golangci-lint
+        env:
+          VERSION: v2.13.1
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh |
+            sh -s -- -b "$(go env GOPATH)/bin" "$VERSION"
+          echo "$(go env GOPATH)/bin" >>"$GITHUB_PATH"
 
-      - name: shellcheck
-        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: versions
+        run: |
+          go version
+          golangci-lint --version
+          shellcheck --version
 
       - name: make check
         run: make check
