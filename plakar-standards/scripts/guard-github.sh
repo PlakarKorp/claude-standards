@@ -34,6 +34,8 @@ EOF
 	exit 0
 }
 
+merging="PlakarKorp policy: do not merge. Opening a PR hands the work over; merging it is for the developer to decide. Say the branch is ready and stop."
+
 conversation="PlakarKorp policy: do not post into GitHub conversations. Comments, reviews and replies are for people; work at the commit level and let the developer speak. Report what you would have said instead."
 
 # Normalise to a single space-separated line, then look at the token after each
@@ -73,6 +75,12 @@ issue comment"* | *"
 pr review"*) deny "$conversation" ;;
 esac
 
+case "
+$verbs" in
+*"
+pr merge"*) deny "$merging" ;;
+esac
+
 # gh api against a comment or review endpoint with a writing method.
 case "
 $verbs" in
@@ -86,6 +94,17 @@ api"*)
 			;;
 		esac
 		;;
+	esac
+	;;
+esac
+
+# The REST and GraphQL merge routes.
+case "$flat" in
+*/merge* | *mergePullRequest* | *enablePullRequestAutoMerge*)
+	case "
+$verbs" in
+	*"
+api"*) deny "$merging" ;;
 	esac
 	;;
 esac
