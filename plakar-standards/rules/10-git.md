@@ -8,13 +8,15 @@
   create the branch, use the developer's username, not your own.
 - Subject line: imperative, lowercase after the area prefix, no trailing period,
   under ~72 characters. `storage/s3: retry on 503 instead of failing the run`
-- Body explains why, and what you decided against. A few lines is right; a
-  paragraph or two only for genuinely tricky work. Skip it when the subject is
-  the whole story.
+- Most commits need no body. The subject is the whole story: write it and stop.
+- When a body is needed, it says why, in one or two sentences. Not what the diff
+  already shows, not what you considered and dropped unless someone would
+  otherwise redo it. Three or more paragraphs means the change should be split.
 - A PR should not carry an excessive number of commits. A big topic is split
   into stacked PRs, each reviewable on its own.
-- PR descriptions follow the same rules as commit bodies: concise, human
-  readable, no smileys, no exhaustive walkthrough.
+- PR descriptions: two or three sentences. What changed and why, human readable,
+  no smileys, no walkthrough, no restating the commits. A reviewer reads the
+  diff, not a summary of it.
 - Never comment on or reply to an issue, a PR comment, or a review on GitHub.
   Work at the commit level and leave the conversation to people. A hook denies
   this; opening a PR and reading threads stay allowed.
