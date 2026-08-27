@@ -6,7 +6,7 @@
     "url": "https://github.com/PlakarKorp"
   },
   "metadata": {
-    "description": "Internal Claude Code plugins for PlakarKorp repositories",
+    "description": "Claude Code plugins for PlakarKorp repositories",
     "version": "0.1.0"
   },
   "plugins": [

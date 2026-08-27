@@ -65,6 +65,10 @@ Commit `.claude/settings.json` to each repo. Claude Code adds the marketplace
 and enables the plugin once the developer trusts the folder — no prompt, no
 manual step. Copy it from [`settings-snippet.json`](settings-snippet.json).
 
+This is also how outside contributors pick the conventions up: they clone the
+repository, trust the folder, and the hooks are in place for their session. It
+only works while this repository is readable to them, which is why it is public.
+
 ### Organisation-wide
 
 On a Team or Enterprise plan, distribute this marketplace from
