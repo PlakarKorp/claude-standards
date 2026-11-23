@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/inject-rules.sh",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/scripts/inject-rules.sh\"",
             "timeout": 10
           }
         ]
@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/guard-paths.sh",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/scripts/guard-paths.sh\"",
             "timeout": 10
           }
         ]
@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/guard-github.sh",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/scripts/guard-github.sh\"",
             "timeout": 10
           }
         ]
@@ -41,7 +41,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/go-check.sh",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/scripts/go-check.sh\"",
             "timeout": 60
           }
         ]
